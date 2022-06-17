@@ -1,7 +1,6 @@
+package alg1;
 
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 import java.util.Random;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -21,9 +20,9 @@ public class DTest {
             System.out.print(schoolAddress);
             for (int j = 0; j < studentsAddresses.length; j++) {
                 sum += Math.abs(schoolAddress - studentsAddresses[j]);
-                if (schoolAddress == studentsAddresses[j]){
+//                if (schoolAddress == studentsAddresses[j]){
 //                    System.out.print("*");
-                }
+//                }
             }
 //            System.out.print("\t");
 //            System.out.println(sum);
@@ -36,7 +35,7 @@ public class DTest {
     }
 
     @Test
-    public void test2() throws IOException {
+    public void test2() {
         int[] studentsAddresses = new int[] {1, 2, 3, 4};
 
         int testAnswer = D.computeSchoolAdrr(studentsAddresses); // call the main method
@@ -46,7 +45,7 @@ public class DTest {
     }
 
     @Test
-    public void test4() throws IOException {
+    public void test4() {
         int[] studentsAddresses = new int[] {-1, 0, 10};
 
         int testAnswer = D.computeSchoolAdrr(studentsAddresses); // call the main method
@@ -56,7 +55,7 @@ public class DTest {
     }
 
     @Test
-    public void test3() throws IOException {
+    public void test3() {
         int[] studentsAddresses = new int[] {22, 49, 63};
 
         int testAnswer = D.computeSchoolAdrr(studentsAddresses); // call the main method
@@ -68,7 +67,7 @@ public class DTest {
     public static final int MAX_STUDENT_COUNT = 100; //100001
     public static final int MAX_STUDENT_ADRR = (int) 2e3; //(int) 2e9
     @Test
-    public void test_random() throws IOException {
+    public void test_random() {
 
         final Random random = new Random();
 
