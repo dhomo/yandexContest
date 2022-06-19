@@ -14,7 +14,7 @@ public class B {
         int j = Integer.parseInt(splitLine[2]);
 
         int route1 = Math.abs(i-j)-1;
-        int route2 = n-Math.max(i,j)+Math.min(i,j)-1;
+        int route2 = n-route1-2;
         int result = Math.min(route1, route2);
         System.out.println(result);
     }
