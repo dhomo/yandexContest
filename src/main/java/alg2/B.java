@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 
 public class B {
     public static final int BUILDING_COUNT = 10;
+    public static final int HOUSE = 1;
+    public static final int SHOP = 2;
+    public static final int OFFICE = 0;
 
     public static int[] parseInput() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -21,18 +24,18 @@ public class B {
     public static int calcMaximumDistance(int[] streetPlan){
         int maximumDistance = 0;
         for (int i = 0; i < streetPlan.length; i++) {
-            if (streetPlan[i] == 1){
+            if (streetPlan[i] == HOUSE){
                 // forward
                 int distToNearest = Integer.MAX_VALUE;
                 for (int j = i+1; j < streetPlan.length; j++) {
-                    if (streetPlan[j] == 2){
+                    if (streetPlan[j] == SHOP){
                         distToNearest = j-i;
                         break;
                     }
                 }
                 // backward
                 for (int j = i-1; j >= 0; j--) {
-                    if (streetPlan[j] == 2){
+                    if (streetPlan[j] == SHOP){
                         distToNearest = Math.min(distToNearest, i - j);
                         break;
                     }
